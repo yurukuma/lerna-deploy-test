@@ -15,4 +15,9 @@ export default defineConfig({
       imports: ['vue',],
     })
   ],
+  server: {
+    // 開發devServer
+    port: '3000',
+    host: true,
+  }
 })

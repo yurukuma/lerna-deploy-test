@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from 'unplugin-auto-import/vite' // 自動引入vue hooks/vue-router
 import path from 'path'
 
 const { resolve } = path
@@ -12,6 +13,9 @@ export default defineConfig({
     Components({
       resolvers: [AntDesignVueResolver()],
     }),
+    AutoImport({
+      imports: ['vue',],
+    })
   ],
   resolve: {
     alias: [
@@ -24,5 +28,10 @@ export default defineConfig({
         replacement: resolve(__dirname, '../common/src/components'),
       },
     ]
+  },
+  server: {
+    // 開發devServer
+    port: '3001',
+    host: true,
   }
 })

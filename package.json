@@ -7,7 +7,9 @@
   "scripts": {
     "store": "lerna exec --scope @monorepo/store -- yarn dev",
     "common": "lerna exec --scope @monorepo/common -- yarn dev",
-    "customer": "lerna exec --scope @monorepo/customer -- yarn dev"
+    "customer": "lerna exec --scope @monorepo/customer -- yarn dev",
+    "dev": "lerna run dev --parallel",
+    "build": "lerna run build --parallel"
   },
   "devDependencies": {
     "lerna": "^6.4.1",
